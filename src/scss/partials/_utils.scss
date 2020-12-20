@@ -1,0 +1,171 @@
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Sizings
+.width__full {
+  width: 100vw;
+}
+
+.width__100 {
+  width: 100%;
+}
+
+.width__50 {
+  width: 50%;
+}
+
+.width__fit {
+  width: fit-content;
+}
+
+.height__full {
+  height: 100vh;
+}
+
+.height__100 {
+  height: 100%;
+}
+
+.height__50 {
+  height: 50%;
+}
+
+.height__fit {
+  height: fit-content;
+}
+
+.obj__cover {
+  object-fit: cover;
+}
+
+.obj__contain {
+  object-fit: contain;
+}
+
+// Flexbox
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.flex__wrap {
+  flex-wrap: wrap;
+}
+
+.justify__start {
+  justify-content: flex-start;
+}
+
+.justify__end {
+  justify-content: flex-end;
+}
+
+.justify__between {
+  justify-content: space-between;
+}
+
+.justify__around {
+  justify-content: space-around;
+}
+
+.align__start {
+  align-items: flex-start;
+}
+
+.align__end {
+  align-items: flex-end;
+}
+
+.align__between {
+  align-items: space-between;
+}
+
+.align__around {
+  align-items: space-around;
+}
+
+// Grid
+.grid {
+  display: grid;
+  grid-gap: var(--gap);
+}
+
+.grid__2_col {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--gap);
+}
+
+.grid__3_col {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--gap);
+}
+
+.grid__auto {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--min-content, 200px), var(--max-content), 1fr)
+  );
+  grid-gap: var(--gap);
+}
+
+//Spacing
+.gap__sm {
+  --gap: 20px;
+}
+
+.gap__md {
+  --gap: 40px;
+}
+
+.gap__lg {
+  --gap: 60px;
+}
+
+// Vertical Alignment
+.valign__center,
+.valign__start,
+.valign__end {
+  display: flex;
+  flex-direction: column;
+  justify-content: var(--alignment);
+}
+
+.valign__center {
+  --alignment: center;
+}
+
+.valign__start {
+  --alignment: flex-start;
+}
+
+.valign__end {
+  --alignment: flex-end;
+}
+
+// Text Elements
+.text_align__center {
+  text-align: center;
+}
+
+.text_align__left {
+  text-align: left;
+}
+
+.text_align__right {
+  text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

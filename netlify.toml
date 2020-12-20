@@ -1,0 +1,18 @@
+[dev]
+  command = 'npm start'
+
+[build]
+  command = "npm run production"
+  publish = "dist" 
+
+[[plugins]]
+  package = "netlify-plugin-inline-critical-css"
+
+[[plugins]]
+  package = "netlify-plugin-image-optim"
+
+[[plugins]]
+  package = "netlify-plugin-minify-html"
+  [plugins.inputs.minifierOptions]
+    removeComments = true
+    collapseInlineTagWhitespace = true

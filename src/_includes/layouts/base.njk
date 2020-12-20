@@ -1,0 +1,31 @@
+{% set assetHash = global.random() %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    {% include 'partials/meta-info.njk' %}
+    {# Default script tag #}
+    <link rel="stylesheet" href="css/styles.css">
+    {% if pageStylesheets %} 
+        {% for item in pageStylesheets %}
+            <link rel="stylesheet" href="{{ item }}?{{ assetHash }}" />
+        {% endfor %}
+  {% endif %}
+</head>
+<body>
+    <main>{% block content %}{% endblock %}</main>
+
+    {% include "partials/footer.njk" %}
+
+    {% if pageScripts %}
+        {% for item in pageScripts %}
+            <script src="{{ item }}?{{ assetHash }}"></script>
+        {% endfor %}
+    {% endif %}
+    {# Default script tag #}
+    <script src="js/scripts.js"></script>
+</body>
+</html>
