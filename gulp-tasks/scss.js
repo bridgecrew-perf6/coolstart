@@ -3,9 +3,8 @@ const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const autoprefixer = require("autoprefixer");
-const log = require("fancy-log");
 
-const input = "./src/scss";
+const input = "./src/scss/**/*.scss";
 const output = "dist/css";
 
 // Flags whether we compress the output etc
@@ -15,11 +14,7 @@ const scss = () => {
   const postcssPlugins = [autoprefixer(), cssnano()];
 
   return src(input)
-    .pipe(
-      sass().on("error", (err) => {
-        log.error(err.message);
-      })
-    )
+    .pipe(sass().on("error", sass.logError))
     .pipe(postcss(postcssPlugins))
     .pipe(dest(output, { sourcemaps: !isProduction }));
 };
