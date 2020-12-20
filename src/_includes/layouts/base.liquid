@@ -1,0 +1,25 @@
+{% assign assetHash = global.random() %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    {% include 'partials/meta-info.liquid' %}
+    {% if pageStylesheets %} 
+        {% for item in pageStylesheets %}
+            <link rel="stylesheet" href="{{ item }}?{{ assetHash }}" />
+        {% endfor %}
+  {% endif %}
+</head>
+<body>
+    <main>{% block content %}{% endblock %}</main>
+
+    {% if pageScripts %}
+        {% for item in pageScripts %}
+            <script src="{{ item }}?{{ assetHash }}"></script>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
