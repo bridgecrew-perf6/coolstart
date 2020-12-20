@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
-    {% include 'partials/meta-info.liquid' %}
+    {% include 'partials/meta-info.njk' %}
     {# Default script tag #}
     <link rel="stylesheet" href="css/styles.css">
     {% if pageStylesheets %} 
@@ -17,6 +17,8 @@
 </head>
 <body>
     <main>{% block content %}{% endblock %}</main>
+
+    {% include "partials/footer.njk" %}
 
     {% if pageScripts %}
         {% for item in pageScripts %}
