@@ -1,0 +1,11 @@
+{
+  "name": "static",
+  "version": "0.1.0",
+  "description": "An 11ty starter deployed on Netlify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "frzrbox",
+  "license": "MIT"
+}
