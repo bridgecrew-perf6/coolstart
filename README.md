@@ -22,3 +22,5 @@ Deploy To Netlify
 - Babel
 - Image optimization
 - SCSS and PostCSS
+
+## Image Optimization
