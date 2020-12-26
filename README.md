@@ -27,6 +27,8 @@ Deploy To Netlify
 
 Static uses [eleventy-img](https://www.11ty.dev/docs/plugins/image/) and a nunjucks shortcode name `picture` to generate responsive images.
 
+**Note:** The images will be all stored in the `img` folder in the root directory so name relative paths accordingly, configuration can also be changed in `.eleventy.js`
+
 The shortcude is structured like this:
 
 ```njk
