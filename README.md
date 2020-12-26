@@ -4,15 +4,17 @@ Static is an 11ty starter deployed on Netlify.
 
 ## Get Started
 
-Clone
+### Clone
 
 `npx degit https://github.com/frzrbox/static/#main <site-name>`
 
-Run Locally
+### Run Locally
 
 `npm start`
 
-Deploy To Netlify
+### Deploy To Netlify
+
+**Note:** While this site can be deployed anyhwere, to get the best out of Static we reccomend deploying on [Netlify](https://www.netlify.com/).
 
 `netlify deploy`
 
@@ -53,3 +55,7 @@ image:
 ```njk
 {% picture image.url, image.alt, 'cool_image width__100' %}
 ```
+
+### Thanks
+
+This project was inspired by lessons learned from [Andy Bell's 11ty Course](https://piccalil.li/course/learn-eleventy-from-scratch/)
