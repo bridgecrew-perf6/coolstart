@@ -4,24 +4,27 @@ Static is an 11ty starter deployed on Netlify.
 
 ## Get Started
 
-Clone
+### Clone
 
 `npx degit https://github.com/frzrbox/static/#main <site-name>`
 
-Run Locally
+### Run Locally
 
 `npm start`
-
-Deploy To Netlify
-
-`netlify deploy`
 
 ## Features
 
 - Inline critical styles
 - Babel
-- [Image optimization](#image-optimization)
+- Image Optimization
 - SCSS and PostCSS
+
+## Contents
+
+- [Meta Info](#meta-info)
+- [Styling](#styling)
+- [Image optimization](#image-optimization)
+- [Deployment](#deployment)
 
 ## Image Optimization
 
@@ -37,7 +40,7 @@ The shortcude is structured like this:
 
 - **src**: The path to the image
 - **alt**: Alt text for the element (Note: the build will fail if no alt is added)
-- **className**: Classes that should be added to the picture element by default all elements will recieve the class `responsive_image`
+- **className** (optional): Classes that should be added to the picture element by default all elements will recieve the class `responsive_image`
 
 ### Example
 
@@ -53,3 +56,13 @@ image:
 ```njk
 {% picture image.url, image.alt, 'cool_image width__100' %}
 ```
+
+## Deployment
+
+**Note:** While this site can be deployed anyhwere, to get the best out of Static we reccomend deploying on [Netlify](https://www.netlify.com/).
+
+`netlify deploy`
+
+### Thanks
+
+This project was inspired by lessons learned from [Andy Bell's 11ty Course](https://piccalil.li/course/learn-eleventy-from-scratch/)
