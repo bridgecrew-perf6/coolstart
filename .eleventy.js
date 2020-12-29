@@ -13,7 +13,7 @@ module.exports = (config) => {
         throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
       }
       let metadata = await Image(src, {
-        widths: [300, 600],
+        widths: [300, 600, 900],
         formats: ['webp', 'jpeg'],
         outputDir: 'dist/img',
       });
