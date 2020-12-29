@@ -30,6 +30,8 @@ Static is an 11ty starter deployed on Netlify.
 
 To set meta information you can edit the `metaDesc` and `title` values in the pages frontmatter.a1
 
+### Example
+
 ```yaml
 ---
 title: About
