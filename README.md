@@ -26,6 +26,20 @@ Static is an 11ty starter deployed on Netlify.
 - [Image optimization](#image-optimization)
 - [Deployment](#deployment)
 
+## Meta Info
+
+To set meta information you can edit the `metaDesc` and `title` values in the pages frontmatter.a1
+
+### Example
+
+```yaml
+---
+title: About
+metaDesc: This is the meta description for the about page.
+---
+
+```
+
 ## Image Optimization
 
 Static uses [eleventy-img](https://www.11ty.dev/docs/plugins/image/) and a nunjucks shortcode name `picture` to generate responsive images.
