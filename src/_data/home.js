@@ -1,8 +1,9 @@
-const { client } = require('../../prismic-configuration');
+// Uncomment this once prismic is configured
+// const { client } = require('../../prismic-configuration');
 
-module.exports = async () => {
-  const home = await client.getByUID('page', 'home');
+// module.exports = async () => {
+//   const home = await client.getByUID('page', 'home');
 
-  //   Even if it's one page still return in an array for 11ty pagination
-  return [home];
-};
+//   //   Even if it's one page still return in an array for 11ty pagination
+//   return [home];
+// };
