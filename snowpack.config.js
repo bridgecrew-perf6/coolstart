@@ -10,16 +10,30 @@ module.exports = {
     },
   },
   plugins: [
+    // '@snowpack/plugin-webpack',
     ['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
     [
       '@snowpack/plugin-run-script',
       { cmd: 'sass src/scss:dist/css --no-source-map', watch: '$1 --watch' },
     ],
+    [
+      '@snowpack/plugin-run-script',
+      { cmd: 'babel ./src/js --out-dir ./dist/js', watch: '$1 --watch' },
+    ],
   ],
-  // installOptions: {},
+  installOptions: {},
+  experiments: {
+    optimize: {
+      bundle: true,
+      minify: true,
+      target: 'es2015',
+    },
+  },
   devOptions: {
     port: 3000,
     bundle: false,
   },
-  // buildOptions: {},
+  buildOptions: {
+    out: 'dist',
+  },
 };
