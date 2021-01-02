@@ -1,6 +1,6 @@
 # Static
 
-Static is an 11ty starter built with Snowpack and deployed on Netlify.
+Static is an 11ty starter built with [Snowpack](https://www.snowpack.dev/), managed with [Prismic](https://prismic.io/) and deployed on [Netlify](https://www.netlify.com/).
 
 ## Get Started
 
@@ -12,12 +12,16 @@ Static is an 11ty starter built with Snowpack and deployed on Netlify.
 
 `npm start`
 
+### Build
+
+`npm run build`
+
 ## Features
 
 - Inline critical styles
 - Babel
 - Image Optimization
-- SCSS and PostCSS
+- SCSS
 
 ## Contents
 

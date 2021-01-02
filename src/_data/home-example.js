@@ -1,4 +1,5 @@
-// Uncomment this once prismic is configured
+/* This is an example query for home */
+
 // const { client } = require('../../prismic-configuration');
 
 // module.exports = async () => {
