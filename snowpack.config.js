@@ -30,9 +30,5 @@ module.exports = {
   },
   devOptions: {
     port: 3000,
-    bundle: false,
-  },
-  buildOptions: {
-    out: 'dist',
   },
 };

@@ -1,1 +1,1 @@
-export const message = 'Connected to static';
+export const message = 'Welcome to Static!';

@@ -1,6 +1,6 @@
 ---
 layout: layouts/home.njk
-title: Wassup
+title: Wassup!
 metaDesc: An 11ty starter deployed on Netlify
 hero:
   image: src/img/hero-image.jpg
