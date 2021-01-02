@@ -2,8 +2,8 @@
   command = 'npm start'
 
 [build]
-  command = "npm run production"
-  publish = "dist" 
+  command = "npm run build"
+  publish = "build" 
 
 [[plugins]]
   package = "netlify-plugin-inline-critical-css"
