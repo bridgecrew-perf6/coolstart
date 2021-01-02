@@ -10,7 +10,6 @@ module.exports = {
     },
   },
   plugins: [
-    // '@snowpack/plugin-webpack',
     ['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
     [
       '@snowpack/plugin-run-script',
