@@ -1,3 +1,3 @@
-const message = 'Welcome to Static';
+import { message } from './message';
 
 console.log(message);

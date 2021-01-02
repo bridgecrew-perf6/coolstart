@@ -2,7 +2,7 @@ const Image = require('@11ty/eleventy-img');
 
 module.exports = (config) => {
   config.addPassthroughCopy('./src/fonts');
-  config.addWatchTarget('./src/js/');
+  config.addWatchTarget('./src');
 
   config.addNunjucksAsyncShortcode(
     'picture',

@@ -1,6 +1,6 @@
 # Static
 
-Static is an 11ty starter deployed on Netlify.
+Static is an 11ty starter built with Snowpack and deployed on Netlify.
 
 ## Get Started
 
@@ -25,6 +25,20 @@ Static is an 11ty starter deployed on Netlify.
 - [Styling](#styling)
 - [Image optimization](#image-optimization)
 - [Deployment](#deployment)
+
+## Meta Info
+
+To set meta information you can edit the `metaDesc` and `title` values in the pages frontmatter.a1
+
+### Example
+
+```yaml
+---
+title: About
+metaDesc: This is the meta description for the about page.
+---
+
+```
 
 ## Image Optimization
 
