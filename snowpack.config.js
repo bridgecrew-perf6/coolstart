@@ -17,6 +17,9 @@ module.exports = {
     ],
   ],
   // installOptions: {},
-  // devOptions: {},
+  devOptions: {
+    port: 3000,
+    bundle: false,
+  },
   // buildOptions: {},
 };
