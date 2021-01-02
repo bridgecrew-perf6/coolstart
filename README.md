@@ -1,6 +1,6 @@
 # Static
 
-Static is an 11ty starter deployed on Netlify.
+Static is an 11ty starter built with Snowpack and deployed on Netlify.
 
 ## Get Started
 
