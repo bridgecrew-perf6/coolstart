@@ -5,35 +5,35 @@
 }
 
 // Sizings
-.width__full {
+.w__full {
   width: 100vw;
 }
 
-.width__100 {
+.w__100 {
   width: 100%;
 }
 
-.width__50 {
+.w__50 {
   width: 50%;
 }
 
-.width__fit {
+.w__fit {
   width: fit-content;
 }
 
-.height__full {
+.h__full {
   height: 100vh;
 }
 
-.height__100 {
+.h__100 {
   height: 100%;
 }
 
-.height__50 {
+.h__50 {
   height: 50%;
 }
 
-.height__fit {
+.h__fit {
   height: fit-content;
 }
 
@@ -53,37 +53,45 @@
 
 .flex__wrap {
   flex-wrap: wrap;
+  display: flex;
+  gap: var(--gap);
 }
 
-.justify__start {
+.flex__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.jc__start {
   justify-content: flex-start;
 }
 
-.justify__end {
+.jc__end {
   justify-content: flex-end;
 }
 
-.justify__between {
+.jc__between {
   justify-content: space-between;
 }
 
-.justify__around {
+.jc__around {
   justify-content: space-around;
 }
 
-.align__start {
+.ai__start {
   align-items: flex-start;
 }
 
-.align__end {
+.ai__end {
   align-items: flex-end;
 }
 
-.align__between {
+.ai__between {
   align-items: space-between;
 }
 
-.align__around {
+.ai__around {
   align-items: space-around;
 }
 
@@ -93,17 +101,17 @@
   grid-gap: var(--gap);
 }
 
-.grid__2_col {
+.gr_2_col {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: var(--gap);
 }
 
-.grid__3_col {
+.g__3_col {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--gap);
 }
 
-.grid__auto {
+.g__auto {
   grid-template-columns: repeat(
     auto-fill,
     minmax(var(--min-content, 200px), var(--max-content), 1fr)
@@ -112,8 +120,12 @@
 }
 
 //Spacing
+.gap__0 {
+  --gap: 0px;
+}
+
 .gap__sm {
-  --gap: 20px;
+  --gap: 10px;
 }
 
 .gap__md {
@@ -125,36 +137,62 @@
 }
 
 // Vertical Alignment
-.valign__center,
-.valign__start,
-.valign__end {
+.va__center,
+.va__start,
+.va__end {
   display: flex;
   flex-direction: column;
   justify-content: var(--alignment);
 }
 
-.valign__center {
+.va__center {
   --alignment: center;
 }
 
-.valign__start {
+.va__start {
   --alignment: flex-start;
 }
 
-.valign__end {
+.va__end {
   --alignment: flex-end;
 }
 
+// Margins
+.m_0 {
+  margin: 0;
+}
+
+.mbottom__auto {
+  margin-bottom: auto;
+}
+
+.mleft__auto {
+  margin-left: auto;
+}
+
+.mright__auto {
+  margin-right: auto;
+}
+
+.mtop__auto {
+  margin-top: auto;
+}
+
+.m_auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // Text Elements
-.text_align__center {
+.ta__center {
   text-align: center;
 }
 
-.text_align__left {
+.ta__left {
   text-align: left;
 }
 
-.text_align__right {
+.ta__right {
   text-align: right;
 }
 
