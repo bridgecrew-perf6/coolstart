@@ -100,7 +100,7 @@ image:
 
 **Note:** While this site can be deployed anyhwere, to get the best out of Static we reccomend deploying on [Netlify](https://www.netlify.com/).
 
-`netlify deploy`
+[![GitHub Logo](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frzrbox/static)
 
 ### Thanks
 
