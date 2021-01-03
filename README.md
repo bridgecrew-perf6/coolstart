@@ -32,9 +32,9 @@ Static is an 11ty starter built with [Snowpack](https://www.snowpack.dev/), mana
 
 ## Meta Info
 
-To set meta information you can edit the `metaDesc` and `title` values in the pages frontmatter.a1
+By default you can globally set meta information in `src/_data/site.json`. You can also customize per page by editing the `metaDesc` and `title` values in the pages frontmatter.
 
-### Example
+**Example**:
 
 ```yaml
 ---
@@ -42,6 +42,27 @@ title: About
 metaDesc: This is the meta description for the about page.
 ---
 
+```
+
+## Styling
+
+Out of the box Static uses SCSS for styling. It comes with helpful utility classes located at `src/scss/partials/_utils.scss` and a [Modern CSS Reset by Andy Bell](https://piccalil.li/blog/a-modern-css-reset/). If you like to write your styling from scratch you can also just delete the entire contents of the `scss` folder.
+
+By default all files located directly in the `src/scss` folder will be passed to `dist/css` (note: all files located in a subfolder will not be passed through). To add multiple stylesheets per page you can set it in the specific layout located at `src/_includes/layouts`.
+
+**Example**:
+
+```tree
+-- scss
+---- styles.css
+---- about.scss
+```
+
+Demo for: `src/_includes/layouts/about.njk`
+
+```njk
+{# Make sure to use relative paths: the css folder is located in the root #}
+{% set pageStylesheets = ['css/styles.css', 'css/about.css'] %}
 ```
 
 ## Image Optimization
@@ -60,7 +81,7 @@ The shortcude is structured like this:
 - **alt**: Alt text for the element (Note: the build will fail if no alt is added)
 - **className** (optional): Classes that should be added to the picture element by default all elements will recieve the class `responsive_image`
 
-### Example
+**Example**:
 
 ```yaml
 ---
