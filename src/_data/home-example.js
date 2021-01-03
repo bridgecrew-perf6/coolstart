@@ -5,6 +5,6 @@
 // module.exports = async () => {
 //   const home = await client.getByUID('page', 'home');
 
-//   //   Even if it's one page still return in an array for 11ty pagination
-//   return [home];
+//   // If there are multiple pages return an array
+//   return home;
 // };
