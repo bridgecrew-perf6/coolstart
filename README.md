@@ -102,6 +102,6 @@ image:
 
 [![GitHub Logo](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frzrbox/static)
 
-### Thanks
+## Thanks
 
 This project was inspired by lessons learned from [Andy Bell's 11ty Course](https://piccalil.li/course/learn-eleventy-from-scratch/)
