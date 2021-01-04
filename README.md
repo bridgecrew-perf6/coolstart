@@ -1,12 +1,16 @@
 # Static
 
-Static is an 11ty starter built with [Snowpack](https://www.snowpack.dev/), managed with [Prismic](https://prismic.io/) and deployed on [Netlify](https://www.netlify.com/).
+Static is an 11ty starter built with [Snowpack](https://www.snowpack.dev/), deployed on [Netlify](https://www.netlify.com/) and has the option to be managed with [Prismic](https://prismic.io/).
 
 ## Get Started
 
 ### Clone
 
+**Default**:
 `npx degit https://github.com/frzrbox/static/#main <site-name>`
+
+**Prismic**:
+`npx degit https://github.com/frzrbox/static/#prismic <site-name>`
 
 ### Run Locally
 
