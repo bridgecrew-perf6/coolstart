@@ -39,5 +39,8 @@
       "pre-commit": "pretty-quick --staged && npm run lint"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "prismic-dom": "^2.2.4",
+    "prismic-javascript": "^3.0.2"
+  }
 }
