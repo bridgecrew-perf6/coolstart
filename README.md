@@ -109,8 +109,11 @@ image:
 
 **Note:** While this site can be deployed anyhwere, to get the best out of Static we reccomend deploying on [Netlify](https://www.netlify.com/).
 
-[![GitHub Logo](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frzrbox/static)
+[![Deploy to Netlify button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frzrbox/static)
 
 ## Thanks
 
-This project was inspired by lessons learned from [Andy Bell's 11ty Course](https://piccalil.li/course/learn-eleventy-from-scratch/)
+This project was inspired by lessons learned from:
+
+- [Andy Bell's 11ty Course](https://piccalil.li/course/learn-eleventy-from-scratch/)
+- [Levelup Tutorials Snowpack & ESM](https://www.leveluptutorials.com/tutorials/esm-and-snowpack)
