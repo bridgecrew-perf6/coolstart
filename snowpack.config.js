@@ -17,7 +17,11 @@ module.exports = {
     ],
     [
       '@snowpack/plugin-run-script',
-      { cmd: 'babel ./src/js --out-dir ./dist/js', watch: '$1 --watch' },
+      {
+        cmd:
+          'babel --presets @babel/preset-typescript --extensions ".ts" ./src/js --out-dir ./dist/js',
+        watch: '$1 --watch',
+      },
     ],
   ],
   installOptions: {},
