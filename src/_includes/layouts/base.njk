@@ -20,10 +20,8 @@
 
     {% if pageScripts %}
         {% for item in pageScripts %}
-            <script src="{{ item }}"></script>
+            <script type="module" src="{{ item }}"></script>
         {% endfor %}
     {% endif %}
-    {# Default script tag #}
-    <script type="module" src="js/scripts.js"></script>
 </body>
 </html>

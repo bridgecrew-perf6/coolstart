@@ -1,0 +1,11 @@
+{% extends "layouts/base.njk" %}
+
+{# Make sure to use relative paths: the css folder is located in the root #}
+{% set pageStylesheets = ['../../css/styles.css'] %}
+
+{% block content %}
+  <article class="container">
+    {# {% richText content %} #}
+    {{content | safe}} hii yooo
+  </article> 
+{% endblock %} 
