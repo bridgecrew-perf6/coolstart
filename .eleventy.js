@@ -6,6 +6,11 @@ module.exports = (config) => {
   config.addPassthroughCopy('./src/fonts');
   config.addWatchTarget('./src');
 
+  // 11ty Shortcodes
+  config.addNunjucksShortcode('richText', function (content) {
+    return htmlSerializer(content);
+  });
+
   config.addNunjucksShortcode(
     'link',
     function (link, content, classNames = '', target = '_self') {
