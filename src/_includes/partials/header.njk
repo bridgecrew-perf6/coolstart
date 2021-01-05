@@ -1,7 +1,16 @@
-{% set mainLink = {type: 'page', uid: 'https://google.com'} %}
+{% set navigation = header.data.navigation %}
 
-<header>
+<header class="[ container ] [ flex jc__between ai__center ]">
     <h1 class="ta__center">{{site.name}}</h1>
 
-    <nav>{% link mainLink, 'content' %}</nav>
+    <nav>
+        <ul role="list" class="flex"> 
+            {% for item in navigation %}
+                <li>
+                    {# shortcode link content classNames target #}
+                    {% link item.link, item.label, 'nav_link', item.link.target %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
 </header>

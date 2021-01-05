@@ -15,7 +15,7 @@ module.exports = (config) => {
     'link',
     function (link, content, classNames = '', target = '_self') {
       const resolvedPath = linkResolver(link);
-      return `<a class="prismic_link${classNames}" href="${resolvedPath}" target="${target}">${content}</a>`;
+      return `<a class="prismic_link ${classNames}" href="${resolvedPath}" target="${target}">${content[0].text}</a>`;
     }
   );
 
