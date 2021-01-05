@@ -1,8 +1,18 @@
 const Image = require('@11ty/eleventy-img');
+const htmlSerializer = require('./htmlSerializer');
+const linkResolver = require('./linkResolver');
 
 module.exports = (config) => {
   config.addPassthroughCopy('./src/fonts');
   config.addWatchTarget('./src');
+
+  config.addNunjucksShortcode(
+    'link',
+    function (link, content, classNames = '', target = '_self') {
+      const resolvedPath = linkResolver(link);
+      return `<a class="prismic_link${classNames}" href="${resolvedPath}" target="${target}">${content}</a>`;
+    }
+  );
 
   config.addNunjucksAsyncShortcode(
     'picture',

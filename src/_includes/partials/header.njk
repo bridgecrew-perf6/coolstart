@@ -1,3 +1,7 @@
+{% set mainLink = {type: 'page', uid: 'https://google.com'} %}
+
 <header>
     <h1 class="ta__center">{{site.name}}</h1>
+
+    <nav>{% link mainLink, 'content' %}</nav>
 </header>

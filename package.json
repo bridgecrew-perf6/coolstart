@@ -32,6 +32,7 @@
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
+    "prismic-dom": "^2.2.4",
     "snowpack": "^2.18.5"
   },
   "husky": {
@@ -40,7 +41,6 @@
     }
   },
   "dependencies": {
-    "prismic-dom": "^2.2.4",
     "prismic-javascript": "^3.0.2"
   }
 }
