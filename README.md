@@ -1,6 +1,6 @@
 # Static
 
-Static is an 11ty starter built with [Snowpack](https://www.snowpack.dev/), deployed on [Netlify](https://www.netlify.com/) and has the option to be managed with [Prismic](https://prismic.io/).
+Static is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www.snowpack.dev/), deployed on [Netlify](https://www.netlify.com/) and has the option to be managed with [Prismic](https://prismic.io/).
 
 ## Get Started
 
@@ -22,15 +22,16 @@ Static is an 11ty starter built with [Snowpack](https://www.snowpack.dev/), depl
 
 ## Features
 
-- Inline critical styles
+- Typescript
 - Babel
-- Image Optimization
 - SCSS
+- Image Optimization
 
 ## Contents
 
 - [Meta Info](#meta-info)
 - [Styling](#styling)
+- [Typescript](#typescript)
 - [Image optimization](#image-optimization)
 - [Deployment](#deployment)
 
@@ -69,6 +70,10 @@ Demo for: `src/_includes/layouts/about.njk`
 {% set pageStylesheets = ['css/styles.css', 'css/about.css'] %}
 ```
 
+## Typescript
+
+All files located in `src/js` support typescript out of the box. It also uses babel to transpile all code, so modern features like `import / export` and `async / await` can be used. If you need further customization you can edit the babel cli in `snowpack.conifg.js`.
+
 ## Image Optimization
 
 Static uses [eleventy-img](https://www.11ty.dev/docs/plugins/image/) and a nunjucks shortcode name `picture` to generate responsive images.
@@ -104,8 +109,11 @@ image:
 
 **Note:** While this site can be deployed anyhwere, to get the best out of Static we reccomend deploying on [Netlify](https://www.netlify.com/).
 
-[![GitHub Logo](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frzrbox/static)
+[![Deploy to Netlify button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frzrbox/static)
 
 ## Thanks
 
-This project was inspired by lessons learned from [Andy Bell's 11ty Course](https://piccalil.li/course/learn-eleventy-from-scratch/)
+This project was inspired by lessons learned from:
+
+- [Andy Bell's 11ty Course](https://piccalil.li/course/learn-eleventy-from-scratch/)
+- [Levelup Tutorials Snowpack & ESM](https://www.leveluptutorials.com/tutorials/esm-and-snowpack)
