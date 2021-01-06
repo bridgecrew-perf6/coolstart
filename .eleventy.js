@@ -1,16 +1,31 @@
 const Image = require('@11ty/eleventy-img');
-// const PrismicDOM = require('prismic-dom');
-// const htmlSerializer = require('./htmlSerializer');
+const PrismicDOM = require('prismic-dom');
+const htmlSerializer = require('./htmlSerializer');
 const linkResolver = require('./linkResolver');
 
 module.exports = (config) => {
+  config.setTemplateFormats([
+    // Templates:
+    'html',
+    'njk',
+    'md',
+    // Static Assets:
+    'css',
+    'jpeg',
+    'jpg',
+    'png',
+    'svg',
+    'woff',
+    'woff2',
+  ]);
+
   config.addPassthroughCopy('./src/fonts');
   config.addWatchTarget('./src');
 
   // 11ty Shortcodes
-  // config.addNunjucksShortcode('richText', function (content) {
-  //   return PrismicDOM.RichText.asHtml(content, linkResolver, htmlSerializer);
-  // });
+  config.addNunjucksShortcode('richText', function (content) {
+    return PrismicDOM.RichText.asHtml(content, linkResolver, htmlSerializer);
+  });
 
   config.addNunjucksShortcode(
     'link',

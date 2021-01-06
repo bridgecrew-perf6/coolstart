@@ -2,10 +2,11 @@
 
 {# Make sure to use relative paths: the css folder is located in the root #}
 {% set pageStylesheets = ['../../css/styles.css'] %}
+{% set title = post.data.resource_name[0].text %}
+{% set post_content = post.data.content %}
 
 {% block content %}
   <article class="container">
-    {# {% richText content %} #}
-    {{content | safe}} hii yooo
+    {% richText post_content %}
   </article> 
-{% endblock %} 
+{% endblock %}

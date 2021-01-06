@@ -1,11 +1,8 @@
 ---
-layout: layouts/post.njk
 pagination:
   data: posts
   size: 1
   alias: post
 permalink: '/posts/{{post.uid | slug}}/index.html'
-post_content:
+layout: layouts/post.njk
 ---
-
-{{post.data.content}}
