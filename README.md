@@ -164,7 +164,7 @@ module.exports = async () => {
 };
 ```
 
-```header.njk`
+`header.njk`
 
 ```njk
 {% set navigation = header.data.navigation %}
