@@ -23,10 +23,13 @@ module.exports = (config) => {
   config.addWatchTarget('./src');
 
   // 11ty Shortcodes
+
+  // HTML Serializer Shortcode
   config.addNunjucksShortcode('richText', function (content) {
     return PrismicDOM.RichText.asHtml(content, linkResolver, htmlSerializer);
   });
 
+  // Link Resovler Shortcode
   config.addNunjucksShortcode(
     'link',
     function (link, content, classNames = '', target = '_self') {
