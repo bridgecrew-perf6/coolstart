@@ -4,10 +4,7 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    dist: {
-      url: '/',
-      static: true,
-    },
+    dist: '/',
   },
   plugins: [
     ['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
@@ -33,6 +30,6 @@ module.exports = {
     },
   },
   devOptions: {
-    hmrDelay: 300,
+    port: 3000,
   },
 };

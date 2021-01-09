@@ -20,7 +20,8 @@ module.exports = (config) => {
   ]);
 
   config.addPassthroughCopy('./src/fonts');
-  config.addWatchTarget('./src');
+  config.addPassthroughCopy('./src/post');
+  config.addWatchTarget('./src/');
 
   // 11ty Shortcodes
 
