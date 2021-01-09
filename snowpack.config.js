@@ -7,10 +7,11 @@ module.exports = {
     dist: '/',
   },
   plugins: [
+    // '@snowpack/plugin-postcss',
     ['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
     [
       '@snowpack/plugin-run-script',
-      { cmd: 'sass src/scss:dist/css --no-source-map', watch: '$1 --watch' },
+      { cmd: 'postcss src/css/out --dir dist/css', watch: '$1 --watch' },
     ],
     [
       '@snowpack/plugin-run-script',
