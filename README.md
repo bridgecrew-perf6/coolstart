@@ -24,7 +24,7 @@ Static is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www
 
 - Typescript
 - Babel
-- SCSS
+- PostCSS
 - Image Optimization
 
 ## Contents
@@ -51,19 +51,34 @@ metaDesc: This is the meta description for the about page.
 
 ## Styling
 
-Out of the box Static uses SCSS for styling. It comes with helpful utility classes located at `src/scss/partials/_utils.scss` and a [Modern CSS Reset by Andy Bell](https://piccalil.li/blog/a-modern-css-reset/). If you like to write your styling from scratch you can also just delete the entire contents of the `scss` folder.
+Out of the box Static uses PostCSS for styling. It comes with helpful utility classes located at `src/css/partials/_utils.css` and a [Modern CSS Reset by Andy Bell](https://piccalil.li/blog/a-modern-css-reset/). If you like to write your styling from scratch you can also just delete the entire contents of the `css` folder.
 
-By default all files located directly in the `src/scss` folder will be passed to `dist/css` (note: all files located in a subfolder will not be passed through). To add multiple stylesheets per page you can set it in the specific layout located at `src/_includes/layouts`.
+All functionality can be extended in `postcss.config.css` and `snowpack.config.js`.
+
+By default all files located directly in the `src/css/out` folder will be passed to `dist/css` (note: all files located in a different subfolder will not be passed through). To add multiple stylesheets per page you can set it in the frontmatter as `pageStylesheets` or in the specific layout located at `src/_includes/layouts`.
 
 **Example**:
 
+In this example `out/styles.css` and `out/about.css` will be passed to `dist/css`, but `partials/_config.css` will not be.
+
 ```tree
--- scss
----- styles.css
----- about.scss
+-- css
+---- partials
+------ _config.css
+---- out
+------ styles.css
+------ about.scss
 ```
 
-Demo for: `src/_includes/layouts/about.njk`
+Set in frontmatter: `src/post/post-one.md`
+
+```yaml
+# Make sure to use relative paths: the css folder is located in the root
+# Must be wrapped in an array even if there is only one stylesheet
+pageStylesheets: ['../css/styles.css']
+```
+
+Set in layout: `src/_includes/layouts/about.njk`
 
 ```njk
 {# Make sure to use relative paths: the css folder is located in the root #}
