@@ -2,7 +2,7 @@ body {
   --color-primary: tomato;
   --color-secondary: wheat;
   --font-main: helvetica, arial, sans-serif;
-  --gap: 0px;
+  --gap: 20px;
   /* Breakpoints */
   --bp-small: 48em;
   --bp-medium: 64em;

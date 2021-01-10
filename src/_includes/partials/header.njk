@@ -1,16 +1,20 @@
 {% set navigation = header.data.navigation %}
 
-<header class="[ container ] [ flex jc__between ai__center ]">
-    <h1><a href="/">{{site.name}}</a></h1>
-
-    <nav>
-        <ul role="list" class="flex"> 
-            {% for item in navigation %}
+<header class="container">
+    <div class="[ flex ] [ jc__between ai__center ]">
+        <h1 class="[ ta__center ]">{{site.name}}</h1>
+        <nav>
+            <ul role="list" class="flex"> 
+                {% for item in navigation %}
+                    <li>
+                        {# shortcode link content classNames target #}
+                        {% link item.link, item.label, 'nav_link', item.link.target %}
+                    </li>
+                {% endfor %}
                 <li>
-                    {# shortcode link content classNames target #}
-                    {% link item.link, item.label, 'nav_link', item.link.target %}
+                    <a href="https://github.com/frzrbox/static">Docs</a>
                 </li>
-            {% endfor %}
-        </ul> 
-    </nav>
+            </ul> 
+        </nav>
+    </div>
 </header>
