@@ -1,7 +1,9 @@
 const flexGapPolyfill = require('flex-gap-polyfill');
 const autoprefixer = require('autoprefixer');
 const easyImport = require('postcss-easy-import');
+const flexboxFixes = require('postcss-flexbugs-fixes');
 
 module.exports = {
-  plugins: [easyImport, autoprefixer, flexGapPolyfill],
+  // Keep easyImport first in the array
+  plugins: [easyImport, autoprefixer, flexboxFixes, flexGapPolyfill],
 };
