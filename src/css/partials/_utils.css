@@ -79,6 +79,14 @@
   justify-content: space-around;
 }
 
+.jc__center {
+  justify-content: center;
+}
+
+.ai__center {
+  align-items: center;
+}
+
 .ai__start {
   align-items: flex-start;
 }

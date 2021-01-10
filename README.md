@@ -26,6 +26,7 @@ Static is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www
 - Babel
 - PostCSS
 - Image Optimization
+- Integration with Prismic (Works out of the box if starting from the Prismic template, otherwise you will have to manually set it up)
 
 ## Contents
 
@@ -33,6 +34,7 @@ Static is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www
 - [Styling](#styling)
 - [Typescript](#typescript)
 - [Image optimization](#image-optimization)
+- [Prismic](#prismic)
 - [Deployment](#deployment)
 
 ## Meta Info
@@ -118,6 +120,84 @@ image:
 
 ```njk
 {% picture image.url, image.alt, 'cool_image width__100' %}
+```
+
+## Prismic
+
+If you start from the Prismic template, Static will come with a configuration file (`prismic.js`), a link resolver (`linkResolver.js`), a HTML serializer (`hmtlSerializer.js`) and handy shortcodes that can be customized in `.eleventy.js`.
+
+### Conifguration
+
+The configuration file is `prismic.js`, it exports a `client` that can be used to query the api within `src/_data`. To setup the configuration you will need to add the values for `PRISMIC_ENDPOINT` and `PRISMIC_ACCESS_TOKEN` to the `.env` file.
+
+Useful links
+
+- [Link Resolver](https://prismic.io/docs/technologies/link-resolver-javascript)
+- [HTML Serializer](https://prismic.io/docs/technologies/html-serializer-javascript)
+- [Querying Data With Prismic](https://prismic.io/docs/technologies/how-to-query-the-api-javascript)
+
+### Link Resolver
+
+Static automatically generates a `link` shortcode that uses options from `linkResovler.js` to generate an `a` tag.
+
+**Example**:
+
+```njk
+{% for item in navigation %}
+  <li>
+      {# shortcode link content classNames target #}
+      {% link item.link, item.label, 'nav_link', item.link.target %}
+  </li>
+{% endfor %}
+```
+
+### HTML Serializer
+
+For parts of the site that need rich text, Static has a `richText` shortcode that will generate rich text based of options specified in the `htmlSerializer.js` and the `linkResolver.js`.
+
+**Example**:
+
+```njk
+{% set post_content = post.data.content %}
+{% richText post_content %}
+```
+
+### Querying
+
+All queries will be done within the `src/_data` directory using the `client` from our configuration file. Documentaion on [querying data from Prismic can be found here](https://prismic.io/docs/technologies/how-to-query-the-api-javascript).
+
+**Example**:
+
+`src/_data/header`
+
+```js
+const { client } = require('../../prismic');
+
+module.exports = async () => {
+  const header = await client.getSingle('header');
+  return header;
+};
+```
+
+`header.njk`
+
+```njk
+{% set navigation = header.data.navigation %}
+
+<header>
+    <h1 class="ta__center"><a href="/">Site Name</a></h1>
+
+    <nav>
+        <ul>
+            {% for item in navigation %}
+                <li>
+                    {# shortcode link content classNames target #}
+                    {% link item.link, item.label, 'nav_link', item.link.target %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
 ```
 
 ## Deployment
