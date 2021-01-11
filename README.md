@@ -9,7 +9,7 @@ Static is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www
 **Default**:
 `npx degit https://github.com/frzrbox/static/#main <site-name>`
 
-**Prismic** (not ready for production):
+**Prismic**:
 `npx degit https://github.com/frzrbox/static/#prismic <site-name>`
 
 ### Run Locally
