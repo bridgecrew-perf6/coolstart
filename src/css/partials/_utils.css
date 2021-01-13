@@ -4,6 +4,14 @@
   margin: 0 auto;
 }
 
+*[data-breakpoint='small'] {
+  --breakpoint: var(--break-small);
+}
+
+*[data-breakpoint='medium'] {
+  --breakpoint: var(--breakpoint-medium);
+}
+
 /* Sizings */
 .w__full {
   width: 100vw;
@@ -45,10 +53,52 @@
   object-fit: contain;
 }
 
+/* Positioning */
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.snap__tl,
+.snap__tr {
+  top: 0;
+}
+
+.snap__bl,
+.snap__br {
+  bottom: 0;
+}
+
+.snap__tl,
+.snap__bl {
+  left: 0;
+}
+
+.snap__tr,
+.snap__br {
+  right: 0;
+}
+
 /* Flexbox */
 .flex {
   display: flex;
   gap: var(--gap, 0px);
+}
+
+.flex[data-breakpoint='small'],
+.flex[data-breakpoint='medium'] {
+  display: block;
+
+  @media (min-width: var(--breakpoint)) {
+    display: flex;
+  }
 }
 
 .flex__wrap {
@@ -115,6 +165,15 @@
 
 .grid {
   display: grid;
+}
+
+.grid[data-breakpoint='small'],
+.grid[data-breakpoint='medium'] {
+  display: block;
+
+  @media (min-width: var(--breakpoint)) {
+    display: grid;
+  }
 }
 
 .gr__2_col {
@@ -194,29 +253,4 @@
 .m_auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-/* Text Elements */
-.ta__center {
-  text-align: center;
-}
-
-.ta__left {
-  text-align: left;
-}
-
-.ta__right {
-  text-align: right;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.lowercase {
-  text-transform: lowercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
