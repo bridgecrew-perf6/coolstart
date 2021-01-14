@@ -75,7 +75,7 @@ In this example `out/styles.css` and `out/about.css` will be passed to `dist/css
 Set in frontmatter: `src/post/post-one.md`
 
 ```yaml
-# Make sure to use relative paths: the css folder is located in the root
+# Make sure to use relative paths: the css folder is located in the root of dist
 # Must be wrapped in an array even if there is only one stylesheet
 pageStylesheets: ['../css/styles.css']
 ```
@@ -83,13 +83,30 @@ pageStylesheets: ['../css/styles.css']
 Set in layout: `src/_includes/layouts/about.njk`
 
 ```njk
-{# Make sure to use relative paths: the css folder is located in the root #}
+{# Make sure to use relative paths: the css folder is located in the root of dist #}
 {% set pageStylesheets = ['css/styles.css', 'css/about.css'] %}
 ```
 
 ## Typescript
 
-All files located in `src/js` support typescript out of the box. It also uses babel to transpile all code, so modern features like `import / export` and `async / await` can be used. If you need further customization you can edit the babel cli in `snowpack.conifg.js`.
+All files located in `src/js` support typescript out of the box. It also uses babel to transpile all code, so modern features like `import / export` and `async / await` can be used. The compiled files will be located in `dist/js`. If you need further customization you can edit the babel cli in `snowpack.conifg.js`.
+
+Similarly to the stylesheets, you can add multiple scripts to a page by specifying it in the frontmatter or layout itself.
+
+Set in frontmatter: `src/post/post-one.md`
+
+```yaml
+# Make sure to use relative paths: the js folder is located in the root of dist
+# Must be wrapped in an array even if there is only one script
+pageScripts: ['../js/scripts.js']
+```
+
+Set in layout: `src/_includes/layouts/about.njk`
+
+```njk
+{# Make sure to use relative paths: the js folder is located in the root of dist #}
+{% set pageStylesheets = ['js/scripts.js'] %}
+```
 
 ## Image Optimization
 
