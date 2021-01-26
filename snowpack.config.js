@@ -10,7 +10,7 @@ module.exports = {
     },
   },
   plugins: [
-    // '@snowpack/plugin-postcss',
+    ['@snowpack/plugin-webpack', { htmlMinifierOptions: true }],
     ['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
     [
       '@snowpack/plugin-run-script',
@@ -26,13 +26,6 @@ module.exports = {
     ],
   ],
   installOptions: {},
-  experiments: {
-    optimize: {
-      bundle: true,
-      minify: true,
-      target: 'es2015',
-    },
-  },
   devOptions: {
     port: 3000,
   },
