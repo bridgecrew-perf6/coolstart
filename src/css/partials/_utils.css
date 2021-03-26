@@ -5,14 +5,6 @@
   margin-right: auto;
 }
 
-*[data-breakpoint='small'] {
-  --breakpoint: var(--break-small);
-}
-
-*[data-breakpoint='medium'] {
-  --breakpoint: var(--breakpoint-medium);
-}
-
 /* Sizings */
 .w__full {
   width: 100vw;
@@ -119,16 +111,6 @@
 /* Flexbox */
 .flex {
   display: flex;
-  gap: var(--gap, 0px);
-}
-
-.flex[data-breakpoint='small'],
-.flex[data-breakpoint='medium'] {
-  display: block;
-
-  @media (min-width: var(--breakpoint)) {
-    display: flex;
-  }
 }
 
 .flex__wrap {
@@ -195,15 +177,6 @@
 
 .grid {
   display: grid;
-}
-
-.grid[data-breakpoint='small'],
-.grid[data-breakpoint='medium'] {
-  display: block;
-
-  @media (min-width: var(--breakpoint)) {
-    display: grid;
-  }
 }
 
 .gr__2_col {

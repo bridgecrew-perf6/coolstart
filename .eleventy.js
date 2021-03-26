@@ -1,7 +1,4 @@
 const Image = require('@11ty/eleventy-img');
-const PrismicDOM = require('prismic-dom');
-const htmlSerializer = require('./htmlSerializer');
-const linkResolver = require('./linkResolver');
 
 module.exports = (config) => {
   config.setTemplateFormats([
@@ -24,20 +21,6 @@ module.exports = (config) => {
   config.addWatchTarget('./src/');
 
   // 11ty Shortcodes
-
-  // HTML Serializer Shortcode
-  config.addNunjucksShortcode('richText', function (content) {
-    return PrismicDOM.RichText.asHtml(content, linkResolver, htmlSerializer);
-  });
-
-  // Link Resovler Shortcode
-  config.addNunjucksShortcode(
-    'link',
-    function (link, content, classNames = '', target = '_self') {
-      const resolvedPath = linkResolver(link);
-      return `<a class="prismic_link ${classNames}" href="${resolvedPath}" target="${target}">${content[0].text}</a>`;
-    }
-  );
 
   config.addNunjucksAsyncShortcode(
     'picture',
