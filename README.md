@@ -1,16 +1,8 @@
-# Static
+# Coolstart
 
-Static is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www.snowpack.dev/), deployed on [Netlify](https://www.netlify.com/) and has the option to be managed with [Prismic](https://prismic.io/).
+Coolstart is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www.snowpack.dev/), deployed on [Netlify](https://www.netlify.com/) and has the option to be managed with [Prismic](https://prismic.io/).
 
 ## Get Started
-
-### Clone
-
-**Default**:
-`npx degit https://github.com/frzrbox/static/#main <site-name>`
-
-**Prismic**:
-`npx degit https://github.com/frzrbox/static/#prismic <site-name>`
 
 ### Run Locally
 
@@ -220,8 +212,6 @@ module.exports = async () => {
 ## Deployment
 
 **Note:** While this site can be deployed anyhwere, to get the best out of Static we reccomend deploying on [Netlify](https://www.netlify.com/).
-
-[![Deploy to Netlify button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frzrbox/static)
 
 ## Thanks
 
