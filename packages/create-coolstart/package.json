@@ -5,6 +5,9 @@
   "bin": {
     "create-coolstart": "cli.js"
   },
+  "scripts": {
+    "test": "npm pack create-coolstart --dry-run"
+  },
   "author": "frzrbox",
   "license": "MIT",
   "dependencies": {
