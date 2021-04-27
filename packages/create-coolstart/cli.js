@@ -25,6 +25,7 @@ const cli = meow(
         type: "string",
         alias: "t",
         default: "default",
+        isRequired: false,
       },
     },
   }
@@ -43,8 +44,21 @@ const pathToTemplate = "frzrbox/coolstart/templates/";
 const currentTemplate = cli.flags.template.toLowerCase();
 const templateExists = availableTemplates.includes(currentTemplate);
 
+// Show the help screen if the template doesn't exist
 if (!templateExists) {
   cli.showHelp(0);
 }
 
-console.log(pathToTemplate + currentTemplate);
+// Initialize project with the correct template
+const renderedTemplate = pathToTemplate + currentTemplate;
+
+initit({ name, renderedTemplate })
+  .then((res) => {
+    console.log(`Created project: ${name} with ${currentTemplate} template`);
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(chalk.bgRedBright(`Failed to create project: ${name}`));
+    console.error(err);
+    process.exit(1);
+  });
