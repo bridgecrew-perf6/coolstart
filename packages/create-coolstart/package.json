@@ -1,6 +1,6 @@
 {
   "name": "create-coolstart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Initialize a project with coolstart",
   "bin": {
     "create-coolstart": "cli.js"
