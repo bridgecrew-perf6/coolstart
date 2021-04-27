@@ -4,6 +4,8 @@ Coolstart is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://
 
 ## Get Started
 
+`npm init coolstart <project-name>`
+
 ### Run Locally
 
 `npm start`
