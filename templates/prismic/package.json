@@ -4,7 +4,7 @@
   "description": "An 11ty starter deployed on Netlify",
   "main": "index.js",
   "scripts": {
-    "start": "snowpack dev",
+    "dev": "snowpack dev",
     "build": "snowpack build",
     "lint": "eslint --ext .js"
   },
