@@ -50,9 +50,9 @@ if (!templateExists) {
 }
 
 // Initialize project with the correct template
-const renderedTemplate = pathToTemplate + currentTemplate;
+const template = pathToTemplate + currentTemplate;
 
-initit({ name, renderedTemplate })
+initit({ name, template })
   .then((res) => {
     console.log(`Created project: ${name} with ${currentTemplate} template`);
     process.exit(0);
