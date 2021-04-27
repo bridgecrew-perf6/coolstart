@@ -4,7 +4,13 @@ Coolstart is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://
 
 ## Get Started
 
+Default Template
+
 `npm init coolstart <project-name>`
+
+Prismic Template
+
+`npm init coolstart -t prismic <project-name>`
 
 ### Run Locally
 
