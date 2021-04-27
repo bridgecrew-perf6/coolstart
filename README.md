@@ -1,16 +1,10 @@
-# Static
+# Coolstart
 
-Static is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www.snowpack.dev/), deployed on [Netlify](https://www.netlify.com/) and has the option to be managed with [Prismic](https://prismic.io/).
+Coolstart is an [11ty](https://11ty.dev/) starter built with [Snowpack](https://www.snowpack.dev/), deployed on [Netlify](https://www.netlify.com/) and has the option to be managed with [Prismic](https://prismic.io/).
 
 ## Get Started
 
-### Clone
-
-**Default**:
-`npx degit https://github.com/frzrbox/static/#main <site-name>`
-
-**Prismic**:
-`npx degit https://github.com/frzrbox/static/#prismic <site-name>`
+`npm init coolstart <project-name>`
 
 ### Run Locally
 
@@ -53,7 +47,7 @@ metaDesc: This is the meta description for the about page.
 
 ## Styling
 
-Out of the box Static uses PostCSS for styling. It comes with helpful utility classes located at `src/css/partials/_utils.css` and a [Modern CSS Reset by Andy Bell](https://piccalil.li/blog/a-modern-css-reset/). If you like to write your styling from scratch you can also just delete the entire contents of the `css` folder.
+Out of the box Coolstart uses PostCSS for styling. It comes with helpful utility classes located at `src/css/partials/_utils.css` and a [Modern CSS Reset by Andy Bell](https://piccalil.li/blog/a-modern-css-reset/). If you like to write your styling from scratch you can also just delete the entire contents of the `css` folder.
 
 All functionality can be extended in `postcss.config.css` and `snowpack.config.js`.
 
@@ -77,7 +71,7 @@ Set in frontmatter: `src/post/post-one.md`
 ```yaml
 # Make sure to use relative paths: the css folder is located in the root of dist
 # Must be wrapped in an array even if there is only one stylesheet
-pageStylesheets: ['../css/styles.css']
+pageStylesheets: ["../css/styles.css"]
 ```
 
 Set in layout: `src/_includes/layouts/about.njk`
@@ -98,7 +92,7 @@ Set in frontmatter: `src/post/post-one.md`
 ```yaml
 # Make sure to use relative paths: the js folder is located in the root of dist
 # Must be wrapped in an array even if there is only one script
-pageScripts: ['../js/scripts.js']
+pageScripts: ["../js/scripts.js"]
 ```
 
 Set in layout: `src/_includes/layouts/about.njk`
@@ -110,7 +104,7 @@ Set in layout: `src/_includes/layouts/about.njk`
 
 ## Image Optimization
 
-Static uses [eleventy-img](https://www.11ty.dev/docs/plugins/image/) and a nunjucks shortcode name `picture` to generate responsive images.
+Coolstart uses [eleventy-img](https://www.11ty.dev/docs/plugins/image/) and a nunjucks shortcode name `picture` to generate responsive images.
 
 **Note:** The images will be all stored in the `img` folder in the root directory so name relative paths accordingly, configuration can also be changed in `.eleventy.js`
 
@@ -141,7 +135,7 @@ image:
 
 ## Prismic
 
-If you start from the Prismic template, Static will come with a configuration file (`prismic.js`), a link resolver (`linkResolver.js`), a HTML serializer (`hmtlSerializer.js`) and handy shortcodes that can be customized in `.eleventy.js`.
+If you start from the Prismic template, Coolstart will come with a configuration file (`prismic.js`), a link resolver (`linkResolver.js`), a HTML serializer (`hmtlSerializer.js`) and handy shortcodes that can be customized in `.eleventy.js`.
 
 ### Conifguration
 
@@ -155,7 +149,7 @@ Useful links
 
 ### Link Resolver
 
-Static automatically generates a `link` shortcode that uses options from `linkResovler.js` to generate an `a` tag.
+Coolstart automatically generates a `link` shortcode that uses options from `linkResovler.js` to generate an `a` tag.
 
 **Example**:
 
@@ -170,7 +164,7 @@ Static automatically generates a `link` shortcode that uses options from `linkRe
 
 ### HTML Serializer
 
-For parts of the site that need rich text, Static has a `richText` shortcode that will generate rich text based of options specified in the `htmlSerializer.js` and the `linkResolver.js`.
+For parts of the site that need rich text, Coolstart has a `richText` shortcode that will generate rich text based of options specified in the `htmlSerializer.js` and the `linkResolver.js`.
 
 **Example**:
 
@@ -188,10 +182,10 @@ All queries will be done within the `src/_data` directory using the `client` fro
 `src/_data/header`
 
 ```js
-const { client } = require('../../prismic');
+const { client } = require("../../prismic");
 
 module.exports = async () => {
-  const header = await client.getSingle('header');
+  const header = await client.getSingle("header");
   return header;
 };
 ```
@@ -219,9 +213,7 @@ module.exports = async () => {
 
 ## Deployment
 
-**Note:** While this site can be deployed anyhwere, to get the best out of Static we reccomend deploying on [Netlify](https://www.netlify.com/).
-
-[![Deploy to Netlify button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/frzrbox/static)
+**Note:** While this site can be deployed anyhwere, to get the best out of Coolstart we reccomend deploying on [Netlify](https://www.netlify.com/).
 
 ## Thanks
 

@@ -4,7 +4,7 @@
   "description": "An 11ty starter deployed on Netlify",
   "main": "index.js",
   "scripts": {
-    "start": "snowpack dev",
+    "dev": "snowpack dev",
     "build": "snowpack build",
     "lint": "eslint --ext .js"
   },
@@ -37,6 +37,7 @@
     "postcss-import": "^14.0.0",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
+    "prismic-dom": "^2.2.4",
     "snowpack": "^2.18.5"
   },
   "husky": {
@@ -44,5 +45,7 @@
       "pre-commit": "pretty-quick --staged && npm run lint"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "prismic-javascript": "^3.0.2"
+  }
 }

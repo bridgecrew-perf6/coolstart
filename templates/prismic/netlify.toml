@@ -1,0 +1,13 @@
+[dev]
+  command = 'npm start'
+
+[build]
+  command = "npm run build"
+  publish = "build" 
+
+[[plugins]]
+  package = "netlify-plugin-inline-critical-css"
+
+[[plugins]]
+  package = "netlify-plugin-image-optim"
+
