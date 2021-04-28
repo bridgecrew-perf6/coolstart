@@ -16,12 +16,9 @@ module.exports = (config) => {
     'woff2',
   ]);
 
-  config.addPassthroughCopy('./src/fonts');
-  config.addPassthroughCopy('./src/post');
   config.addWatchTarget('./src/');
 
   // 11ty Shortcodes
-
   config.addNunjucksAsyncShortcode(
     'picture',
 
