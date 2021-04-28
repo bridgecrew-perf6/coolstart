@@ -24,7 +24,7 @@ Prismic Template
 
 - Typescript
 - Babel
-- PostCSS
+- SASS/SCSS
 - Image Optimization
 - Integration with Prismic (Works out of the box if starting from the Prismic template, otherwise you will have to manually set it up)
 
@@ -53,31 +53,14 @@ metaDesc: This is the meta description for the about page.
 
 ## Styling
 
-Out of the box Coolstart uses PostCSS for styling. It comes with helpful utility classes located at `src/css/partials/_utils.css` and a [Modern CSS Reset by Andy Bell](https://piccalil.li/blog/a-modern-css-reset/). If you like to write your styling from scratch you can also just delete the entire contents of the `css` folder.
-
-All functionality can be extended in `postcss.config.css` and `snowpack.config.js`.
-
-By default all files located directly in the `src/css/out` folder will be passed to `dist/css` (note: all files located in a different subfolder will not be passed through). To add multiple stylesheets per page you can set it in the frontmatter as `pageStylesheets` or in the specific layout located at `src/_includes/layouts`.
-
-**Example**:
-
-In this example `out/styles.css` and `out/about.css` will be passed to `dist/css`, but `partials/_config.css` will not be.
-
-```tree
--- css
----- partials
------- _config.css
----- out
------- styles.css
------- about.scss
-```
+Cool start supports SASS/SCSS out of the box. Files in the `src/scss` folder will be passed to `dist/css`. You can include specific stylesheets by adding them to the `pageStylesheets` property in the frontmatter or directly in the template. Any changes to configuration can be made in the `snowpack.config.js` file.
 
 Set in frontmatter: `src/post/post-one.md`
 
 ```yaml
 # Make sure to use relative paths: the css folder is located in the root of dist
 # Must be wrapped in an array even if there is only one stylesheet
-pageStylesheets: ["../css/styles.css"]
+pageStylesheets: ['../css/styles.css']
 ```
 
 Set in layout: `src/_includes/layouts/about.njk`
@@ -98,7 +81,7 @@ Set in frontmatter: `src/post/post-one.md`
 ```yaml
 # Make sure to use relative paths: the js folder is located in the root of dist
 # Must be wrapped in an array even if there is only one script
-pageScripts: ["../js/scripts.js"]
+pageScripts: ['../js/scripts.js']
 ```
 
 Set in layout: `src/_includes/layouts/about.njk`
@@ -188,11 +171,11 @@ All queries will be done within the `src/_data` directory using the `client` fro
 `src/_data/header`
 
 ```js
-const { client } = require("../../prismic");
+const { client } = require('../../prismic');
 
 module.exports = async () => {
-  const header = await client.getSingle("header");
-  return header;
+	const header = await client.getSingle('header');
+	return header;
 };
 ```
 
@@ -227,3 +210,4 @@ This project was inspired by lessons learned from:
 
 - [Andy Bell's 11ty Course](https://piccalil.li/course/learn-eleventy-from-scratch/)
 - [Levelup Tutorials Snowpack & ESM](https://www.leveluptutorials.com/tutorials/esm-and-snowpack)
+- [MDX Deck](https://github.com/jxnblk/mdx-deck)
