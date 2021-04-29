@@ -1,1 +1,6 @@
-@import './partials/reset';
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+
+@import "./partials/reset";
+@import "./partials/utils";
