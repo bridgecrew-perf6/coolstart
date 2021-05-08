@@ -13,7 +13,7 @@ const cli = meow(
         
 
     ${chalk.blue.bold("Flags")}
-        ${chalk.greenBright("--template")}, ${chalk.greenBright("-t")} template
+        ${chalk.greenBright("--template")} template
 
     ${chalk.blue.bold("Templates")}
         ${chalk.greenBright("default")} base 11ty template (will be default)
@@ -23,7 +23,6 @@ const cli = meow(
     flags: {
       template: {
         type: "string",
-        alias: "t",
         default: "default",
         isRequired: false,
       },
