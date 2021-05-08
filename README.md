@@ -10,7 +10,7 @@ Default Template
 
 Prismic Template
 
-`npm init coolstart -t prismic <project-name>`
+`npm init coolstart --template prismic <project-name>`
 
 ### Run Locally
 
@@ -60,7 +60,7 @@ Set in frontmatter: `src/post/post-one.md`
 ```yaml
 # Make sure to use relative paths: the css folder is located in the root of dist
 # Must be wrapped in an array even if there is only one stylesheet
-pageStylesheets: ['../css/styles.css']
+pageStylesheets: ["../css/styles.css"]
 ```
 
 Set in layout: `src/_includes/layouts/about.njk`
@@ -81,7 +81,7 @@ Set in frontmatter: `src/post/post-one.md`
 ```yaml
 # Make sure to use relative paths: the js folder is located in the root of dist
 # Must be wrapped in an array even if there is only one script
-pageScripts: ['../js/scripts.js']
+pageScripts: ["../js/scripts.js"]
 ```
 
 Set in layout: `src/_includes/layouts/about.njk`
@@ -171,11 +171,11 @@ All queries will be done within the `src/_data` directory using the `client` fro
 `src/_data/header`
 
 ```js
-const { client } = require('../../prismic');
+const { client } = require("../../prismic");
 
 module.exports = async () => {
-	const header = await client.getSingle('header');
-	return header;
+  const header = await client.getSingle("header");
+  return header;
 };
 ```
 
