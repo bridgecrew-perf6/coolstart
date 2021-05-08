@@ -4,6 +4,7 @@
   "description": "An 11ty starter deployed on Netlify",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "snowpack dev",
     "build": "snowpack build",
     "lint": "eslint --ext .js"
