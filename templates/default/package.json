@@ -16,8 +16,8 @@
 		"@babel/core": "^7.12.10",
 		"@babel/preset-typescript": "^7.12.7",
 		"@snowpack/plugin-run-script": "^2.2.1",
-		"@snowpack/plugin-webpack": "^2.3.0",
 		"dotenv": "^8.2.0",
+		"pug": "^2.0.4",
 		"sass": "^1.32.11",
 		"snowpack": "^2.18.5"
 	}
