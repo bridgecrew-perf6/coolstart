@@ -1,10 +1,12 @@
 ---
-layout: layouts/home.njk
+layout: layouts/home.pug
 title: Wassup!
 metaDesc: An 11ty starter deployed on Netlify
 # Make sure to use relative paths: the css folder is located in the root #
-pageStylesheets: ["css/styles.css"]
+stylesheets: ['/css/styles.css']
+scripts: ['/js/scripts.js']
+hero_title: about page test refresh
 hero:
-  image: src/img/hero-image.jpg
+  image: img/hero-image.jpg
   alt: Photo by Reuben Mcfeeters on Unsplash
 ---

@@ -1,0 +1,10 @@
+extends ./base
+
+block variables 
+    - var template = 'home'
+
+block content 
+    div(data-template=template)
+        section.container 
+            div !{filters.image(hero.image, hero.alt)}
+            h2=hero_title
