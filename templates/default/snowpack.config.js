@@ -23,7 +23,7 @@ module.exports = {
 	installOptions: {},
 	devOptions: {
 		port: 3000,
-		hmrDelay: 500,
+		hmrDelay: 300,
 	},
 	buildOptions: {
 		clean: true,
