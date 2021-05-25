@@ -12,9 +12,6 @@ function imageShortcode(src, alt, className = '', sizes = '100vw') {
 		outputDir: '_site/img',
 	};
 
-	Image(src, options);
-	let metadata = Image.statsSync(src, options);
-
 	let imageAttributes = {
 		alt,
 		sizes,
@@ -22,6 +19,10 @@ function imageShortcode(src, alt, className = '', sizes = '100vw') {
 		loading: 'lazy',
 		decoding: 'async',
 	};
+
+	Image(src, options);
+
+	let metadata = Image.statsSync(src, options);
 
 	// You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
 	return Image.generateHTML(metadata, imageAttributes, {
