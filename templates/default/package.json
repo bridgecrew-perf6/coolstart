@@ -4,8 +4,9 @@
 	"description": "An 11ty starter deployed on Netlify",
 	"main": "index.js",
 	"scripts": {
-		"dev": "snowpack dev",
-		"build": "snowpack build"
+		"dev": "npm run del-dir && snowpack dev",
+		"build": "snowpack build",
+		"del-dir": "rm -rf _site"
 	},
 	"author": "frzrbox",
 	"license": "MIT",
