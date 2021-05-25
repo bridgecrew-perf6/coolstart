@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+# Local Netlify folder
+.netlify
+# You can remove these if deploying to alternate source (ex. github pages)
+build
+_site

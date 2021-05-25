@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "prismic-dom": "^2.2.5",
+    "prismic-javascript": "^3.0.2"
+  }
+}
