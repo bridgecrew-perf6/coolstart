@@ -20,6 +20,8 @@ module.exports = (config) => {
 		'woff2',
 	]);
 
+	config.addPassthroughCopy('assets');
+
 	// 11ty Shortcodes
 	config.addJavaScriptFunction('image', imageShortcode);
 	config.addJavaScriptFunction('log', (val) => console.log(val));
