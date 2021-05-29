@@ -1,6 +1,6 @@
 const PrismicDOM = require('prismic-dom');
 const Elements = PrismicDOM.RichText.Elements;
-const linkResolver = require('./linkResolver');
+const { linkResolver } = require('./handleLinkResolver');
 
 const htmlSerializer = function (type, element, content, children) {
 	switch (type) {

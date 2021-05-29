@@ -6,12 +6,13 @@ html(lang="en")
         include ../partials/meta
 
         if stylesheets
-                each item in stylesheets
-                    link(rel="stylesheet"  media="print" onload="this.media='all'" href=item)
+            each item in stylesheets
+                link(rel="stylesheet" media="print" onload="this.media='all'" href=item)
 
         body
             include ../partials/header
 
+            h1=home 
             .content(data-template=template)
                 block content 
 

@@ -1,4 +1,3 @@
-const path = require('path');
 const imageShortcode = require('./transforms/shortcodes/imageShortcode');
 
 module.exports = (config) => {

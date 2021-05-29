@@ -1,4 +1,3 @@
-const path = require('path');
 const imageShortcode = require('./transforms/shortcodes/imageShortcode');
 const handleRichText = require('./transforms/shortcodes/handleRichText');
 const {
@@ -25,32 +24,22 @@ module.exports = (config) => {
 	]);
 
 	config.addPassthroughCopy('assets');
+	config.addPassthroughCopy('js');
 
 	// 11ty Shortcodes
 	config.addJavaScriptFunction('image', imageShortcode);
 	config.addJavaScriptFunction('richText', handleRichText);
 	config.addJavaScriptFunction('link', handleLinkResolver);
-	config.addJavaScriptFunction('log', (val) => console.log(val));
+	config.addJavaScriptFunction('log', (val) => console.log('log', val));
 
 	global.filters = config.javascriptFunctions;
 	config.setPugOptions({
 		globals: ['filters'],
 	});
 
-	// Watch all 11ty specific directories
-	config.addWatchTarget(path.join(__dirname, 'img'));
-	config.addWatchTarget(path.join(__dirname, 'scss'));
-	config.addWatchTarget(path.join(__dirname, 'includes'));
-	config.addWatchTarget(path.join(__dirname, 'data'));
-	config.addWatchTarget(path.join(__dirname, 'js'));
-	config.addWatchTarget(path.join(__dirname, 'pages'));
-
 	return {
 		dir: {
-			input: path.join(__dirname, 'pages'),
-			// Relative to the 'pages' directory
-			includes: '../includes',
-			data: '../data',
+			input: 'views',
 			output: '_site',
 		},
 	};
