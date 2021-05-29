@@ -10,7 +10,7 @@ module.exports = {
 		['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
 		[
 			'@snowpack/plugin-run-script',
-			{ cmd: 'sass src/scss:_site/css', watch: '$1 --watch' },
+			{ cmd: 'sass scss:_site/css', watch: '$1 --watch' },
 		],
 	],
 	installOptions: {},

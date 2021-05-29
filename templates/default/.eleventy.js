@@ -20,9 +20,8 @@ module.exports = (config) => {
 		'woff2',
 	]);
 
-	config.addPassthroughCopy('public');
+	config.addPassthroughCopy('assets');
 	config.addPassthroughCopy('js');
-	config.addPassthroughCopy('scss');
 
 	// 11ty Shortcodes
 	config.addJavaScriptFunction('image', imageShortcode);
@@ -35,7 +34,7 @@ module.exports = (config) => {
 
 	return {
 		dir: {
-			input: 'src',
+			input: 'views',
 			output: '_site',
 		},
 	};

@@ -20,13 +20,9 @@ function imageShortcode(src, alt, className = '', sizes = '100vw') {
 		decoding: 'async',
 	};
 
-	// This allows you to just pass in image from the img/path
-	// If the location of the img folder changes, adjust it accordingly
-	const imageSrc = 'src/' + src;
+	Image(src, options);
 
-	Image(imageSrc, options);
-
-	let metadata = Image.statsSync(imageSrc, options);
+	let metadata = Image.statsSync(src, options);
 
 	// You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
 	return Image.generateHTML(metadata, imageAttributes, {
