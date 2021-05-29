@@ -1,4 +1,8 @@
 const imageShortcode = require('./transforms/shortcodes/imageShortcode');
+const handleRichText = require('./transforms/shortcodes/handleRichText');
+const {
+	handleLinkResolver,
+} = require('./transforms/shortcodes/handleLinkResolver');
 
 module.exports = (config) => {
 	const pug = require('pug');
@@ -24,7 +28,9 @@ module.exports = (config) => {
 
 	// 11ty Shortcodes
 	config.addJavaScriptFunction('image', imageShortcode);
-	config.addJavaScriptFunction('log', (val) => console.log(val));
+	config.addJavaScriptFunction('richText', handleRichText);
+	config.addJavaScriptFunction('link', handleLinkResolver);
+	config.addJavaScriptFunction('log', (val) => console.log('log', val));
 
 	global.filters = config.javascriptFunctions;
 	config.setPugOptions({
