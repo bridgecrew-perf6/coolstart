@@ -20,7 +20,9 @@ module.exports = (config) => {
 		'woff2',
 	]);
 
-	config.addPassthroughCopy('assets');
+	config.addPassthroughCopy('public');
+	config.addPassthroughCopy('js');
+	config.addPassthroughCopy('scss');
 
 	// 11ty Shortcodes
 	config.addJavaScriptFunction('image', imageShortcode);
@@ -31,20 +33,9 @@ module.exports = (config) => {
 		globals: ['filters'],
 	});
 
-	// Watch all 11ty specific directories
-	config.addWatchTarget(path.join(__dirname, 'img'));
-	config.addWatchTarget(path.join(__dirname, 'scss'));
-	config.addWatchTarget(path.join(__dirname, 'includes'));
-	config.addWatchTarget(path.join(__dirname, 'data'));
-	config.addWatchTarget(path.join(__dirname, 'js'));
-	config.addWatchTarget(path.join(__dirname, 'pages'));
-
 	return {
 		dir: {
-			input: path.join(__dirname, 'pages'),
-			// Relative to the 'pages' directory
-			includes: '../includes',
-			data: '../data',
+			input: 'src',
 			output: '_site',
 		},
 	};

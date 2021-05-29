@@ -10,14 +10,7 @@ module.exports = {
 		['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
 		[
 			'@snowpack/plugin-run-script',
-			{ cmd: 'sass scss:_site/css', watch: '$1 --watch' },
-		],
-		[
-			'@snowpack/plugin-run-script',
-			{
-				cmd: 'babel --presets @babel/preset-typescript --extensions ".ts" js --out-dir _site/js',
-				watch: '$1 --watch',
-			},
+			{ cmd: 'sass src/scss:_site/css', watch: '$1 --watch' },
 		],
 	],
 	installOptions: {},
@@ -25,12 +18,9 @@ module.exports = {
 		port: 3000,
 		hmrDelay: 300,
 	},
-	buildOptions: {
-		clean: true,
-	},
 	optimize: {
 		bundle: true,
 		minify: true,
-		target: 'es2018',
+		target: 'es2015',
 	},
 };

@@ -1,0 +1,3 @@
+The public folder will automatically be passed through, this directory is good for things like:
+- fonts
+- favicons
