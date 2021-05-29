@@ -3,27 +3,24 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
-  mount: {
-    dist: '/',
-  },
-  plugins: [
-    ['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
-    [
-      '@snowpack/plugin-run-script',
-      { cmd: 'sass src/scss:dist/css', watch: '$1 --watch' },
-    ],
-    [
-      '@snowpack/plugin-run-script',
-      {
-        cmd:
-          'babel --presets @babel/preset-typescript --extensions ".ts" ./src/js --out-dir ./dist/js',
-        watch: '$1 --watch',
-      },
-    ],
-    ['@snowpack/plugin-webpack', { htmlMinifierOptions: true }],
-  ],
-  installOptions: {},
-  devOptions: {
-    port: 3000,
-  },
+	mount: {
+		_site: { url: '/', static: true },
+	},
+	plugins: [
+		['@snowpack/plugin-run-script', { cmd: 'eleventy', watch: '$1 --watch' }],
+		[
+			'@snowpack/plugin-run-script',
+			{ cmd: 'sass scss:_site/css', watch: '$1 --watch' },
+		],
+	],
+	installOptions: {},
+	devOptions: {
+		port: 3000,
+		hmrDelay: 300,
+	},
+	optimize: {
+		bundle: true,
+		minify: true,
+		target: 'es2015',
+	},
 };

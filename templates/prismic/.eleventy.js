@@ -1,81 +1,46 @@
-const Image = require("@11ty/eleventy-img");
-const PrismicDOM = require("prismic-dom");
-const htmlSerializer = require("./htmlSerializer");
-const linkResolver = require("./linkResolver");
+const imageShortcode = require('./transforms/shortcodes/imageShortcode');
+const handleRichText = require('./transforms/shortcodes/handleRichText');
+const {
+	handleLinkResolver,
+} = require('./transforms/shortcodes/handleLinkResolver');
 
 module.exports = (config) => {
-  config.setTemplateFormats([
-    // Templates:
-    "html",
-    "njk",
-    "md",
-    // Static Assets:
-    "css",
-    "jpeg",
-    "jpg",
-    "png",
-    "svg",
-    "woff",
-    "woff2",
-  ]);
+	const pug = require('pug');
+	config.setLibrary('pug', pug);
 
-  config.addPassthroughCopy("./src/fonts");
-  config.addPassthroughCopy("./src/post");
-  config.addWatchTarget("./src/");
+	config.setTemplateFormats([
+		// Templates:
+		'html',
+		'pug',
+		'md',
+		// Static Assets:
+		'css',
+		'jpeg',
+		'jpg',
+		'png',
+		'svg',
+		'woff',
+		'woff2',
+	]);
 
-  // 11ty Shortcodes
+	config.addPassthroughCopy('assets');
+	config.addPassthroughCopy('js');
 
-  // HTML Serializer Shortcode
-  config.addNunjucksShortcode("richText", function (content) {
-    return PrismicDOM.RichText.asHtml(content, linkResolver, htmlSerializer);
-  });
+	// 11ty Shortcodes
+	config.addJavaScriptFunction('image', imageShortcode);
+	config.addJavaScriptFunction('richText', handleRichText);
+	config.addJavaScriptFunction('link', handleLinkResolver);
+	config.addJavaScriptFunction('log', (val) => console.log('log', val));
 
-  // Link Resovler Shortcode
-  config.addNunjucksShortcode(
-    "link",
-    function (link, content, classNames = "", target = "_self") {
-      const resolvedPath = linkResolver(link);
-      return `<a class="prismic_link ${classNames}" href="${resolvedPath}" target="${target}">${content[0].text}</a>`;
-    }
-  );
+	global.filters = config.javascriptFunctions;
+	config.setPugOptions({
+		globals: ['filters'],
+	});
 
-  config.addNunjucksAsyncShortcode(
-    "picture",
-
-    async function (src, alt, className = "", sizes = "100vw") {
-      if (alt === undefined) {
-        // You bet we throw an error on missing alt (alt="" works okay)
-        throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
-      }
-      let metadata = await Image(src, {
-        widths: [300, 600, 900],
-        formats: ["webp", "jpeg"],
-        outputDir: "dist/img",
-      });
-
-      let lowsrc = metadata.jpeg[0];
-
-      return `<picture class="[ responsive_image ] ${className}">
-              ${Object.values(metadata)
-                .map((imageFormat) => {
-                  return `  <source type="image/${
-                    imageFormat[0].format
-                  }" srcset="${imageFormat
-                    .map((entry) => entry.srcset)
-                    .join(", ")}" sizes="${sizes}">`;
-                })
-                .join("\n")}        
-              <img src="${lowsrc.url}" width="${lowsrc.width}" height="${
-        lowsrc.height
-      }" alt="${alt}">      
-            </picture>`;
-    }
-  );
-
-  return {
-    dir: {
-      input: "src",
-      output: "dist",
-    },
-  };
+	return {
+		dir: {
+			input: 'views',
+			output: '_site',
+		},
+	};
 };

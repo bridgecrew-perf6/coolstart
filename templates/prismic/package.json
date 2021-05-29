@@ -1,43 +1,24 @@
 {
-  "name": "static",
-  "version": "0.1.0",
-  "description": "An 11ty starter deployed on Netlify",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "snowpack dev",
-    "build": "snowpack build",
-    "lint": "eslint --ext .js"
-  },
-  "author": "frzrbox",
-  "license": "MIT",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-img": "^0.7.1",
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-typescript": "^7.12.7",
-    "@snowpack/plugin-run-script": "^2.2.1",
-    "@snowpack/plugin-webpack": "^2.3.0",
-    "dotenv": "^8.2.0",
-    "eslint": "^7.16.0",
-    "eslint-config": "^0.3.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-prettier": "^3.3.0",
-    "flex-gap-polyfill": "^2.0.0",
-    "husky": "^4.3.6",
-    "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0",
-    "prismic-dom": "^2.2.4",
-    "sass": "^1.32.11",
-    "snowpack": "^2.18.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint"
-    }
-  },
-  "dependencies": {
-    "prismic-javascript": "^3.0.2"
-  }
+	"name": "coolstart",
+	"version": "0.0.2",
+	"description": "An 11ty starter deployed on Netlify",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npm run del-dir && snowpack dev",
+		"build": "snowpack build",
+		"del-dir": "rm -rf _site"
+	},
+	"author": "frzrbox",
+	"license": "MIT",
+	"devDependencies": {
+		"@11ty/eleventy": "^0.11.1",
+		"@11ty/eleventy-img": "^0.7.1",
+		"@snowpack/plugin-run-script": "^2.2.1",
+		"dotenv": "^8.2.0",
+		"prismic-dom": "^2.2.5",
+		"prismic-javascript": "^3.0.2",
+		"pug": "^2.0.4",
+		"sass": "^1.32.11",
+		"snowpack": "^2.18.5"
+	}
 }

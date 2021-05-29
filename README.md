@@ -36,6 +36,7 @@ Prismic Template
 - [Image optimization](#image-optimization)
 - [Prismic](#prismic)
 - [Deployment](#deployment)
+- [Gotchas](#gotchas)
 
 ## Meta Info
 
@@ -48,7 +49,6 @@ By default you can globally set meta information in `src/_data/site.json`. You c
 title: About
 metaDesc: This is the meta description for the about page.
 ---
-
 ```
 
 ## Styling
@@ -60,7 +60,7 @@ Set in frontmatter: `src/post/post-one.md`
 ```yaml
 # Make sure to use relative paths: the css folder is located in the root of dist
 # Must be wrapped in an array even if there is only one stylesheet
-pageStylesheets: ["../css/styles.css"]
+pageStylesheets: ['../css/styles.css']
 ```
 
 Set in layout: `src/_includes/layouts/about.njk`
@@ -81,7 +81,7 @@ Set in frontmatter: `src/post/post-one.md`
 ```yaml
 # Make sure to use relative paths: the js folder is located in the root of dist
 # Must be wrapped in an array even if there is only one script
-pageScripts: ["../js/scripts.js"]
+pageScripts: ['../js/scripts.js']
 ```
 
 Set in layout: `src/_includes/layouts/about.njk`
@@ -115,7 +115,6 @@ image:
   url: src/img/my-cool-image.jpg
   alt: This is a really cool image
 ---
-
 ```
 
 ```njk
@@ -171,11 +170,11 @@ All queries will be done within the `src/_data` directory using the `client` fro
 `src/_data/header`
 
 ```js
-const { client } = require("../../prismic");
+const { client } = require('../../prismic');
 
 module.exports = async () => {
-  const header = await client.getSingle("header");
-  return header;
+	const header = await client.getSingle('header');
+	return header;
 };
 ```
 
@@ -203,6 +202,15 @@ module.exports = async () => {
 ## Deployment
 
 **Note:** While this site can be deployed anyhwere, to get the best out of Coolstart we reccomend deploying on [Netlify](https://www.netlify.com/).
+
+## Gotchas
+
+**Supages not updating when changes are made to the content**
+As of right now HMR will only work with routes that have a trailing slash. If you are editing the content but don't see the changes reflected on the live site, add a trailing slash to the route as will as link.
+
+`/about to /about/`
+
+The trailing slashes can be removed by Netlify by following the [steps](https://answers.netlify.com/t/support-guide-how-can-i-alter-trailing-slash-behaviour-in-my-urls-will-enabling-pretty-urls-help/31191)
 
 ## Thanks
 

@@ -1,0 +1,10 @@
+extends ./base
+
+block variables 
+    - var template = 'home'
+
+block content 
+    div(data-template=template)
+        section.container 
+            img(src=home.data.image.url alt=home.data.image.alt) 
+            h2=home.data.tile

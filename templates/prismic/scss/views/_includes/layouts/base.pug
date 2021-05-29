@@ -1,0 +1,23 @@
+block variables
+
+doctype html
+html(lang="en")
+    head
+        include ../partials/meta
+
+        if stylesheets
+            each item in stylesheets
+                link(rel="stylesheet" media="print" onload="this.media='all'" href=item)
+
+        body
+            include ../partials/header
+
+            h1=home 
+            .content(data-template=template)
+                block content 
+
+            include ../partials/footer
+
+            if scripts
+                each item in scripts
+                    script(src=item type="module")
