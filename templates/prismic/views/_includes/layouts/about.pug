@@ -1,0 +1,10 @@
+extends ./base
+
+block variables 
+    - var template = 'about'
+
+block content 
+    div(data-template=template)
+        section.container 
+            h2=about.data.title 
+            div!=filters.richText(about.data.content)

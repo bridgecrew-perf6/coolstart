@@ -6,5 +6,5 @@ block variables
 block content 
     div(data-template=template)
         section.container 
-            div !{filters.image(hero.image, hero.alt)}
-            h2=hero_title
+            img(src=home.data.image.url alt=home.data.image.alt) 
+            h2=home.data.tile

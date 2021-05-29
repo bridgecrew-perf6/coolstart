@@ -1,7 +1,7 @@
 const { client } = require('../../prismic');
 
 module.exports = async () => {
-	const home = await client.getSingle('homepage');
+	const about = await client.getByUID('page', 'about');
 
-	return home;
+	return about;
 };
