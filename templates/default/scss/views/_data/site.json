@@ -1,9 +1,0 @@
-{
-	"name": "Coolstart",
-	"description": "Coolstart is an 11ty starter deployed to Netlify",
-	"url": "<add domain here>",
-	"meta": {
-		"name": "Cool Start",
-		"description": "Coolstart is an 11ty starter"
-	}
-}

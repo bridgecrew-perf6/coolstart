@@ -2,9 +2,5 @@ $color-primary: red;
 $color-secondary: blue;
 $color-tertiary: green;
 
-@import './partials/reset';
-@import './partials/utils';
-
-body {
-	background: orange;
-}
+@import "./partials/reset";
+@import "./partials/utils";
